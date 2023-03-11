@@ -67,16 +67,16 @@ class _CredentialScreenState extends State<CredentialScreen> {
           //     ],
           //   ),
           // ),
-          const SizedBox(
-            height: 12,
-          ),
-          InkWell(
-            onTap: () => _lunchLinkedin(),
-            child: const Text(
-              "Linkedin (pour les professionels)",
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
+          // const SizedBox(
+          //   height: 12,
+          // ),
+          // InkWell(
+          //   onTap: () => _lunchLinkedin(),
+          //   child: const Text(
+          //     "Linkedin (pour les professionels)",
+          //     style: TextStyle(fontSize: 18),
+          //   ),
+          // ),
         ],
       ),
     );
