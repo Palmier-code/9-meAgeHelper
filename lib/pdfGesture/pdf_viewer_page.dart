@@ -1,7 +1,11 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+// ignore: depend_on_referenced_packages
+import 'package:syncfusion_flutter_pdf/pdf.dart';
+
 // import 'package:path/path.dart';
 
 class PDFViewerPage extends StatefulWidget {
@@ -19,55 +23,91 @@ class PDFViewerPage extends StatefulWidget {
 }
 
 class _PDFViewerPageState extends State<PDFViewerPage> {
-  late PDFViewController controller;
-  int pages = 0;
-  int indexPage = 0;
+  late PdfTextSearchResult _searchResult;
+  late PdfViewerController _pdfViewerController;
+
+  @override
+  initState() {
+    _pdfViewerController = PdfViewerController();
+    _searchResult = PdfTextSearchResult();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // final name = basename(widget.file.path);
-    final pageText = '${indexPage + 1} of $pages';
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.name),
         backgroundColor: Colors.grey[900],
         actions: [
-          Center(
-            child: Text(pageText),
-          ),
           IconButton(
-            onPressed: () {
-              final page = indexPage - 1;
-              controller.setPage(page);
-            },
             icon: const Icon(
-              Icons.chevron_left,
-              size: 32,
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              _searchResult = _pdfViewerController.searchText(
+                'the', // mettre la recherche que l'on veut ici
+                searchOption: TextSearchOption.caseSensitive,
+              );
+              if (kIsWeb) {
+                setState(() {});
+              } else {
+                _searchResult.addListener(
+                  () {
+                    if (_searchResult.hasResult) {
+                      setState(() {});
+                    }
+                  },
+                );
+              }
+            },
+          ),
+          Visibility(
+            visible: _searchResult.hasResult,
+            child: IconButton(
+              icon: const Icon(
+                Icons.clear,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                setState(() {
+                  _searchResult.clear();
+                });
+              },
             ),
           ),
-          IconButton(
-            onPressed: () {
-              final page = indexPage + 1;
-              controller.setPage(page);
-            },
-            icon: const Icon(
-              Icons.chevron_right,
-              size: 32,
+          Visibility(
+            visible: _searchResult.hasResult,
+            child: IconButton(
+              icon: const Icon(
+                Icons.keyboard_arrow_up,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                _searchResult.previousInstance();
+              },
+            ),
+          ),
+          Visibility(
+            visible: _searchResult.hasResult,
+            child: IconButton(
+              icon: const Icon(
+                Icons.keyboard_arrow_down,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                _searchResult.nextInstance();
+              },
             ),
           ),
         ],
       ),
-      body: PDFView(
-        filePath: widget.file.path,
-        // swipeHorizontal: true, swipe gauceh droite
-        pageSnap: false, // pouvoir aller entre les pages
-        pageFling: false, // ouvoir swipe plusieurs pages
-        onRender: (pages) => setState(() => this.pages = pages!),
-        onViewCreated: (controller) =>
-            setState(() => this.controller = controller),
-        onPageChanged: (indexPage, _) =>
-            setState(() => this.indexPage = indexPage!),
+      body: SfPdfViewer.file(
+        widget.file,
+        controller: _pdfViewerController,
+        currentSearchTextHighlightColor: Colors.yellow.withOpacity(0.6),
+        otherSearchTextHighlightColor: Colors.yellow.withOpacity(0.3),
       ),
     );
   }

@@ -20,11 +20,11 @@ dependencies:
   #urlLuncher
   url_launcher: ^6.1.10
 
-  # display PDF
-  flutter_pdfview: ^1.2.5
-
   # splash_screen
   flutter_native_splash: ^2.2.19
+
+  # display pdf
+  syncfusion_flutter_pdfviewer: ^20.4.53
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0

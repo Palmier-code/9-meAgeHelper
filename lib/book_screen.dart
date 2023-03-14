@@ -12,6 +12,7 @@ class _BookScreenState extends State<BookScreen> {
   final ScrollController _scrollBarController = ScrollController();
   late String version = "francais";
   bool switchVersion = true;
+  late String versionBook = "Début Mars 2023";
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +65,7 @@ class _BookScreenState extends State<BookScreen> {
                     ],
                   ),
                 ),
+                Text("Version: $versionBook"),
                 buttonShowBook(context, version, "Regles", "Livre de Regles"),
                 buttonShowBook(context, version, "Magie", "Recueil Arcanique"),
                 buttonShowBook(context, version, "Saurien", "Ancien Saurien"),

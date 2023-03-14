@@ -51,6 +51,14 @@ class _CredentialScreenState extends State<CredentialScreen> {
             ),
             textAlign: TextAlign.center,
           ),
+          const SizedBox(
+            height: 24,
+          ),
+          const Text(
+            "App Version: alpha 1.0.0",
+            style: TextStyle(fontSize: 18),
+            textAlign: TextAlign.center,
+          )
           // const SizedBox(
           //   height: 12,
           // ),
