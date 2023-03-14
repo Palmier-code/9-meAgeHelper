@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -25,11 +26,16 @@ class PDFViewerPage extends StatefulWidget {
 class _PDFViewerPageState extends State<PDFViewerPage> {
   late PdfTextSearchResult _searchResult;
   late PdfViewerController _pdfViewerController;
+  late Widget customSearchBar;
+  late String search;
+
+  bool isOpen = false;
 
   @override
   initState() {
     _pdfViewerController = PdfViewerController();
     _searchResult = PdfTextSearchResult();
+    customSearchBar = Text(widget.name);
     super.initState();
   }
 
@@ -37,48 +43,84 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.name),
+        // title: Text(widget.name),
+        title: customSearchBar,
         backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
             onPressed: () {
-              _searchResult = _pdfViewerController.searchText(
-                'the', // mettre la recherche que l'on veut ici
-                searchOption: TextSearchOption.caseSensitive,
-              );
-              if (kIsWeb) {
-                setState(() {});
-              } else {
-                _searchResult.addListener(
-                  () {
-                    if (_searchResult.hasResult) {
+              setState(() {
+                if (isOpen == false) {
+                  isOpen = true;
+                  customSearchBar = ListTile(
+                    title: TextField(
+                      onChanged: (tmp) {
+                        setState(() {
+                          search = tmp;
+                        });
+                      },
+                      decoration: const InputDecoration(
+                        hintText: 'Recherche ?',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  );
+                } else {
+                  if (search != "" || search.isNotEmpty) {
+                    _searchResult = _pdfViewerController.searchText(
+                      search,
+                      searchOption: TextSearchOption.caseSensitive,
+                    );
+                    if (kIsWeb) {
                       setState(() {});
+                    } else {
+                      _searchResult.addListener(
+                        () {
+                          if (_searchResult.hasResult) {
+                            setState(() {});
+                          }
+                        },
+                      );
                     }
-                  },
-                );
-              }
+                  }
+                }
+              });
             },
+            icon: const Icon(Icons.search),
           ),
+          // IconButton(
+          //   icon: const Icon(
+          //     Icons.search,
+          //     color: Colors.white,
+          //   ),
+          //   onPressed: () {
+          //     _searchResult = _pdfViewerController.searchText(
+          //       'the', // mettre la recherche que l'on veut ici
+          //       searchOption: TextSearchOption.caseSensitive,
+          //     );
+          //     if (kIsWeb) {
+          //       setState(() {});
+          //     } else {
+          //       _searchResult.addListener(
+          //         () {
+          //           if (_searchResult.hasResult) {
+          //             setState(() {});
+          //           }
+          //         },
+          //       );
+          //     }
+          //   },
+          // ),
           Visibility(
-            visible: _searchResult.hasResult,
-            child: IconButton(
-              icon: const Icon(
-                Icons.clear,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                setState(() {
-                  _searchResult.clear();
-                });
-              },
-            ),
-          ),
-          Visibility(
-            visible: _searchResult.hasResult,
+            visible: isOpen && _searchResult.hasResult,
             child: IconButton(
               icon: const Icon(
                 Icons.keyboard_arrow_up,
@@ -90,7 +132,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
             ),
           ),
           Visibility(
-            visible: _searchResult.hasResult,
+            visible: isOpen && _searchResult.hasResult,
             child: IconButton(
               icon: const Icon(
                 Icons.keyboard_arrow_down,
@@ -98,6 +140,22 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
               ),
               onPressed: () {
                 _searchResult.nextInstance();
+              },
+            ),
+          ),
+          Visibility(
+            visible: isOpen,
+            child: IconButton(
+              icon: const Icon(
+                Icons.clear,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                setState(() {
+                  isOpen = false;
+                  customSearchBar = Text(widget.name);
+                  _searchResult.clear();
+                });
               },
             ),
           ),
