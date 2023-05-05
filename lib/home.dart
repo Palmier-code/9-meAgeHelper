@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:palmhelp/army_screen.dart';
 import 'package:palmhelp/book_screen.dart';
 import 'package:palmhelp/credential_screen.dart';
 
@@ -17,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     Container(
       child: Text("Mettre la recherche ici ?"),
     ),
+    ArmyScreen(),
     CredentialScreen(),
   ];
 
@@ -44,6 +47,12 @@ class _HomePageState extends State<HomePage> {
               Icons.home,
             ),
             label: "Accueil",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.all_inbox,
+            ),
+            label: "Armée",
           ),
           BottomNavigationBarItem(
             icon: Icon(

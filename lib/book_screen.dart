@@ -66,29 +66,42 @@ class _BookScreenState extends State<BookScreen> {
                   ),
                 ),
                 Text("Version: $versionBook"),
-                buttonShowBook(context, version, "Regles", "Livre de Regles"),
-                buttonShowBook(context, version, "Magie", "Recueil Arcanique"),
-                buttonShowBook(context, version, "Saurien", "Ancien Saurien"),
-                buttonShowBook(context, version, "Vampire", "Compte Vampire"),
-                buttonShowBook(context, version, "ElfeNoire", "Elfe Noire"),
-                buttonShowBook(context, version, "ElfeSylvain", "Elfe Sylvain"),
-                buttonShowBook(context, version, "ElfeHaut", "Haut Elfe"),
-                buttonShowBook(
-                    context, version, "Empire", "Empire de Sonnstahl"),
-                buttonShowBook(context, version, "Nain", "Forteresse Naines"),
-                buttonShowBook(
-                    context, version, "Guerrier", "Guerrier des dieux sombres"),
-                buttonShowBook(context, version, "Bete", "Hardes bestiales"),
-                buttonShowBook(
-                    context, version, "Sphynx", "Dynastie immortels"),
-                buttonShowBook(context, version, "Ogres", "Khan ogre"),
-                buttonShowBook(context, version, "Demon", "Légion Démoniaque"),
-                buttonShowBook(
-                    context, version, "Vermine", "Marée de vermines"),
-                buttonShowBook(context, version, "NainDuc", "Nain infernal"),
-                buttonShowBook(context, version, "Ork", "Orque et goblin"),
-                buttonShowBook(
-                    context, version, "Bretonnie", "Royaume d'Equitaine"),
+                Wrap(
+                  children: [
+                    buttonShowBook(
+                        context, version, "Regles", "Livre de Regles"),
+                    buttonShowBook(
+                        context, version, "Magie", "Recueil Arcanique"),
+                    buttonShowBook(
+                        context, version, "Saurien", "Ancien Saurien"),
+                    buttonShowBook(
+                        context, version, "Vampire", "Compte Vampire"),
+                    buttonShowBook(context, version, "ElfeNoire", "Elfe Noire"),
+                    buttonShowBook(
+                        context, version, "ElfeSylvain", "Elfe Sylvain"),
+                    buttonShowBook(context, version, "ElfeHaut", "Haut Elfe"),
+                    buttonShowBook(
+                        context, version, "Empire", "Empire de Sonnstahl"),
+                    buttonShowBook(
+                        context, version, "Nain", "Forteresse Naines"),
+                    buttonShowBook(context, version, "Guerrier",
+                        "Guerrier des dieux sombres"),
+                    buttonShowBook(
+                        context, version, "Bete", "Hardes bestiales"),
+                    buttonShowBook(
+                        context, version, "Sphynx", "Dynastie immortels"),
+                    buttonShowBook(context, version, "Ogres", "Khan ogre"),
+                    buttonShowBook(
+                        context, version, "Demon", "Légion Démoniaque"),
+                    buttonShowBook(
+                        context, version, "Vermine", "Marée de vermines"),
+                    buttonShowBook(
+                        context, version, "NainDuc", "Nain infernal"),
+                    buttonShowBook(context, version, "Ork", "Orque et goblin"),
+                    buttonShowBook(
+                        context, version, "Bretonnie", "Royaume d'Equitaine"),
+                  ],
+                ),
               ],
             ),
           ],

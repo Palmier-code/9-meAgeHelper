@@ -55,12 +55,12 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 24,
           ),
           Text(
-            "App Version: alpha 1.0.2",
+            "App Version: alpha 1.0.7",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Changement pour cette version: \n-Possibilité de faire une recherche dans un pdf\n-Changement dans la gestion des pdf\n-affichage de la version de l'app et des books",
+            "Changement pour cette version: \n-Ajout des photos pour les books\n-Affichage différent des books\n-Ajout d'un message d'erreur lorsqu'il ne trouve pas d'informations\n-Ajout de lapage Armée",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           )

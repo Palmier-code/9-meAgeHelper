@@ -22,7 +22,12 @@ Widget buttonShowBook(
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(title),
+          child: Column(
+            children: [
+              Image.asset('assets/logo/book/$path.png'),
+              Text(title),
+            ],
+          ),
         ),
       ),
     ),

@@ -3,6 +3,7 @@ import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:palmhelp/Utils/pop_up.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 // ignore: depend_on_referenced_packages
 import 'package:syncfusion_flutter_pdf/pdf.dart';
@@ -85,7 +86,15 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
                       _searchResult.addListener(
                         () {
                           if (_searchResult.hasResult) {
+                            print("trouver");
                             setState(() {});
+                          }
+                          if (_searchResult.isSearchCompleted) {
+                            popUp(
+                              context: context,
+                              string:
+                                  "Désoler mais votre recherche ne correspond à rien",
+                            );
                           }
                         },
                       );
