@@ -11,10 +11,10 @@ class CredentialScreen extends StatefulWidget {
 class _CredentialScreenState extends State<CredentialScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Text(
             "Bienvenue sur l'application PalmHelp",
             style: TextStyle(fontSize: 18),
@@ -55,12 +55,12 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 24,
           ),
           Text(
-            "App Version: alpha 1.0.7",
+            "App Version: alpha 1.2.1",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Changement pour cette version: \n-Ajout des photos pour les books\n-Affichage différent des books\n-Ajout d'un message d'erreur lorsqu'il ne trouve pas d'informations\n-Ajout de lapage Armée",
+            "Changement pour cette version: \n-Ajout de la page armée\n-Ajout du stockage de l'armée",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           )
