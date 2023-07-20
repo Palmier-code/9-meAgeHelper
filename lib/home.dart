@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:palmhelp/army/army_screen.dart';
 import 'package:palmhelp/book_screen.dart';
 import 'package:palmhelp/credential_screen.dart';
+import 'package:palmhelp/score_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,8 +17,8 @@ class _HomePageState extends State<HomePage> {
 
   static final List<Widget> _pages = [
     const BookScreen(),
-    const Text("Mettre la recherche ici ?"),
-    ArmyScreen(),
+    const ScoreScren(),
+    const ArmyScreen(),
     const CredentialScreen(),
   ];
 
@@ -42,9 +43,9 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
+              Icons.score,
             ),
-            label: "Accueil",
+            label: "Fin de Partie",
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -63,7 +64,6 @@ class _HomePageState extends State<HomePage> {
         onTap: _onItemTapped,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.grey[900],
-        // selectedFontSize: ,
       ),
     );
   }
