@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:js_interop';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +89,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
                             print("trouver");
                             setState(() {});
                           }
-                          if (_searchResult.isSearchCompleted) {
+                          if (_searchResult.isNull) {
                             popUp(
                               context: context,
                               string:

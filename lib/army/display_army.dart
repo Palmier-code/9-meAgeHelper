@@ -64,9 +64,7 @@ class _DisplayArmyState extends State<DisplayArmy> {
         ),
         onTap: () {
           setState(() {
-            print(widgetListCheck.value[index]);
             widgetListCheck.value[index] = !widgetListCheck.value[index];
-            print(widgetListCheck.value[index]);
             total = widgetListCheck.value[index]
                 ? total + int.parse(unity.substring(0, 3))
                 : total - int.parse(unity.substring(0, 3));

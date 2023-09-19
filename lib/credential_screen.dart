@@ -55,12 +55,12 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 24,
           ),
           Text(
-            "App Version: alpha 1.3.0",
+            "App Version: alpha 1.3.2",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Changement pour cette version: \n-Ajout de la page armée\n-Ajout du stockage de l'armée\n-Ajout du début des calculs de fin de partie\n-Ajout du alcul des points de vos armées",
+            "Changement pour cette version: \n-Ajout de la page armée\n-Ajout du stockage de l'armée\n-Ajout du début des calculs de fin de partie\n-Ajout du alcul des points de vos armées\n-Clean Code\n-Bug fix on the search of the book",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           )
@@ -101,7 +101,6 @@ class _CredentialScreenState extends State<CredentialScreen> {
     )) {
       throw Exception('Could not launch Linekdin');
     }
-    ;
   }
 
   Future<void> _lunchDiscord() async {
@@ -110,6 +109,5 @@ class _CredentialScreenState extends State<CredentialScreen> {
     )) {
       throw Exception('Could not launch Linekdin');
     }
-    ;
   }
 }
