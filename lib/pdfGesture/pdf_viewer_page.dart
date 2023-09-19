@@ -1,6 +1,4 @@
 import 'dart:io';
-import 'dart:js_interop';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:palmhelp/Utils/pop_up.dart';
@@ -8,7 +6,6 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 // ignore: depend_on_referenced_packages
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 
-// import 'package:path/path.dart';
 
 class PDFViewerPage extends StatefulWidget {
   final File file;
@@ -44,7 +41,6 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Text(widget.name),
         title: customSearchBar,
         backgroundColor: Colors.grey[900],
         actions: [
@@ -89,7 +85,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
                             print("trouver");
                             setState(() {});
                           }
-                          if (_searchResult.isNull) {
+                          if (_searchResult.isSearchCompleted) {
                             popUp(
                               context: context,
                               string:

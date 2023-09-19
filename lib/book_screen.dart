@@ -12,7 +12,7 @@ class _BookScreenState extends State<BookScreen> {
   final ScrollController _scrollBarController = ScrollController();
   late String version = "francais";
   bool switchVersion = true;
-  late String versionBook = "Début Mars 2023";
+  late String versionBook = "Septembre 2023";
 
   @override
   Widget build(BuildContext context) {
@@ -69,37 +69,37 @@ class _BookScreenState extends State<BookScreen> {
                 Wrap(
                   children: [
                     buttonShowBook(
-                        context, version, "Regles", "Livre de Regles"),
+                        context, version, "Regles", version == "francais" ? "Livre de Regles" : "RulesBook"),
                     buttonShowBook(
-                        context, version, "Magie", "Recueil Arcanique"),
+                        context, version, "Magie", version == "francais" ? "Recueil Arcanique" : "Arcane Compendium"),
                     buttonShowBook(
-                        context, version, "Saurien", "Ancien Saurien"),
+                        context, version, "Saurien", version == "francais" ? "Ancien Saurien" : "Saurian Ancients"),
                     buttonShowBook(
-                        context, version, "Vampire", "Compte Vampire"),
-                    buttonShowBook(context, version, "ElfeNoire", "Elfe Noire"),
+                        context, version, "Vampire", version == "francais" ? "Compte Vampire" : "Vampire Covenant"),
+                    buttonShowBook(context, version, "ElfeNoire", version == "francais" ? "Elfe Noire" : "Dread Elves"),
                     buttonShowBook(
-                        context, version, "ElfeSylvain", "Elfe Sylvain"),
-                    buttonShowBook(context, version, "ElfeHaut", "Haut Elfe"),
+                        context, version, "ElfeSylvain", version == "francais" ? "Elfe Sylvain" : "Sylvan Elves"),
+                    buttonShowBook(context, version, "ElfeHaut", version == "francais" ? "Haut Elfe" : "Highborn Elves"),
                     buttonShowBook(
-                        context, version, "Empire", "Empire de Sonnstahl"),
+                        context, version, "Empire", version == "francais" ? "Empire de Sonnstahl" : "Empire of Sonnstahl"),
                     buttonShowBook(
-                        context, version, "Nain", "Forteresse Naines"),
-                    buttonShowBook(context, version, "Guerrier",
-                        "Guerrier des dieux sombres"),
+                        context, version, "Nain", version == "francais" ? "Forteresse Naines" : "Dwarven Holds"),
+                    buttonShowBook(context, version, "Guerrier",version == "francais" ? 
+                        "Guerrier des dieux sombres" : "Warriors of the Dark Gods"),
                     buttonShowBook(
-                        context, version, "Bete", "Hardes bestiales"),
+                        context, version, "Bete", version == "francais" ? "Hardes bestiales" : "Beast Herds"),
                     buttonShowBook(
-                        context, version, "Sphynx", "Dynastie immortels"),
-                    buttonShowBook(context, version, "Ogres", "Khan ogre"),
+                        context, version, "Sphynx", version == "francais" ? "Dynastie immortels" : "Undying Dynasties"),
+                    buttonShowBook(context, version, "Ogres", version == "francais" ? "Khan ogre" : "Ogre Khans"),
                     buttonShowBook(
-                        context, version, "Demon", "Légion Démoniaque"),
+                        context, version, "Demon", version == "francais" ? "Légion Démoniaque" : "Deamon Legions"),
                     buttonShowBook(
-                        context, version, "Vermine", "Marée de vermines"),
+                        context, version, "Vermine", version == "francais" ? "Marée de vermines" : "Vermin Swarm"),
                     buttonShowBook(
-                        context, version, "NainDuc", "Nain infernal"),
-                    buttonShowBook(context, version, "Ork", "Orque et goblin"),
+                        context, version, "NainDuc", version == "francais" ? "Nain infernal" : "Infernal Dwarves"),
+                    buttonShowBook(context, version, "Ork", version == "francais" ? "Orques et goblins" : "Orcs and Gobelins"),
                     buttonShowBook(
-                        context, version, "Bretonnie", "Royaume d'Equitaine"),
+                        context, version, "Bretonnie", version == "francais" ? "Royaume d'Equitaine": "Kingdom of Equitaine"),
                   ],
                 ),
               ],
