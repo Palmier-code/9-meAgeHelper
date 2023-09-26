@@ -14,6 +14,7 @@ class _ScoreScrennState extends State<ScoreScren> {
   bool man2 = false;
   int score1 = 0;
   int score2 = 0;
+  int total = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,12 @@ class _ScoreScrennState extends State<ScoreScren> {
             ],
           ),
           ElevatedButton(
-            child: Text("Calculer le score"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.grey[800],
+            ),
+            child: const Text(
+              "Calculer le score",
+            ),
             onPressed: () {
               if (int.tryParse(army1.text) != null &&
                   int.tryParse(army2.text) != null) {
@@ -104,7 +110,6 @@ class _ScoreScrennState extends State<ScoreScren> {
                   } else if (3150 < tmp) {
                     score1 = 17;
                     score2 = 3;
-                    // --------------------------------------------------
                   } else if (-450 <= tmp && tmp <= -226) {
                     score1 = 9;
                     score2 = 11;
@@ -134,6 +139,7 @@ class _ScoreScrennState extends State<ScoreScren> {
                     score1 -= 3;
                     score2 += 3;
                   }
+                  total = tmp;
                 });
               } else {
                 print("Do nothing"); // TODO mettre une popup
@@ -141,6 +147,7 @@ class _ScoreScrennState extends State<ScoreScren> {
             },
           ),
           Text("$score1-$score2"),
+          // Text(total.toString()),
         ],
       ),
     );
