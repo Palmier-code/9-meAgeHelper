@@ -75,8 +75,8 @@ class _BookScreenState extends State<BookScreen> {
                     buttonShowBook(
                         context, version, "Saurien", version == "francais" ? "Ancien Saurien" : "Saurian Ancients"),
                     buttonShowBook(
-                        context, version, "Vampire", version == "francais" ? "Compte Vampire" : "Vampire Covenant"),
-                    buttonShowBook(context, version, "ElfeNoire", version == "francais" ? "Elfe Noire" : "Dread Elves"),
+                        context, version, "Vampire", version == "francais" ? "Conclave Vampirique" : "Vampire Covenant"),
+                    buttonShowBook(context, version, "ElfeNoire", version == "francais" ? "Elfes Noires" : "Dread Elves"),
                     buttonShowBook(
                         context, version, "ElfeSylvain", version == "francais" ? "Elfe Sylvain" : "Sylvan Elves"),
                     buttonShowBook(context, version, "ElfeHaut", version == "francais" ? "Haut Elfe" : "Highborn Elves"),

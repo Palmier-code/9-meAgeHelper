@@ -12,6 +12,10 @@ class _ScoreScrennState extends State<ScoreScren> {
   TextEditingController army2 = TextEditingController();
   bool man1 = false;
   bool man2 = false;
+  bool bsb1 = false;
+  bool bsb2 = false;
+  bool gen1 = false;
+  bool gen2 = false;
   int score1 = 0;
   int score2 = 0;
   int total = 0;
@@ -55,6 +59,7 @@ class _ScoreScrennState extends State<ScoreScren> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Checkbox(
+                activeColor: Colors.grey[800],
                 value: man1,
                 onChanged: (value) {
                   setState(() {
@@ -64,11 +69,60 @@ class _ScoreScrennState extends State<ScoreScren> {
                 },
               ),
               Checkbox(
+                activeColor: Colors.grey[800],
                 value: man2,
                 onChanged: (value) {
                   setState(() {
                     man2 = value!;
                     man1 = false;
+                  });
+                },
+              ),
+            ],
+          ),
+          const Text("Grande banière"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Checkbox(
+                activeColor: Colors.grey[800],
+                value: bsb1,
+                onChanged: (value) {
+                  setState(() {
+                    bsb1 = value!;
+                  });
+                },
+              ),
+              Checkbox(
+                activeColor: Colors.grey[800],
+                value: bsb2,
+                onChanged: (value) {
+                  setState(() {
+                    bsb2 = value!;
+                  });
+                },
+              ),
+            ],
+          ),
+          const Text("Général"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Checkbox(
+                activeColor: Colors.grey[800],
+                value: gen1,
+                onChanged: (value) {
+                  setState(() {
+                    gen1 = value!;
+                  });
+                },
+              ),
+              Checkbox(
+                activeColor: Colors.grey[800],
+                value: gen2,
+                onChanged: (value) {
+                  setState(() {
+                    gen2 = value!;
                   });
                 },
               ),
@@ -85,6 +139,18 @@ class _ScoreScrennState extends State<ScoreScren> {
               if (int.tryParse(army1.text) != null &&
                   int.tryParse(army2.text) != null) {
                 int tmp = int.parse(army1.text) - int.parse(army2.text);
+                if (bsb1 == true) {
+                  tmp = tmp + 200;
+                }
+                if (bsb2 == true) {
+                  tmp = tmp - 200;
+                }
+                if (gen1 == true) {
+                  tmp = tmp + 200;
+                }
+                if (gen2 == true) {
+                  tmp = tmp - 200;
+                }
                 setState(() {
                   if (255 >= tmp && tmp >= -255) {
                     score1 = 10;
