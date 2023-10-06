@@ -37,9 +37,6 @@ class _DisplayArmyState extends State<DisplayArmy> {
   }
 
   Widget armyContainer(String unity, int index, int max, bool widgetCheck) {
-    // TextDecoration tmp = widgetListCheck.value[index] == false
-    //     ? TextDecoration.none
-    //     : TextDecoration.lineThrough;
 
     if (index == 0) {
       return Center(
@@ -81,35 +78,3 @@ class _DisplayArmyState extends State<DisplayArmy> {
     );
   }
 }
-
-// class ButtonA extends StatefulWidget {
-//   VoidCallback tap;
-//   Color defaultColor;
-//   Color pressedColor;
-//   ButtonA(
-//       {required this.tap,
-//       required this.pressedColor,
-//       required this.defaultColor});
-
-//   @override
-//   State createState() => new ButtonAState();
-// }
-
-// class ButtonAState extends State<ButtonA> {
-//   bool _pressed = false;
-//   Widget build(BuildContext context) {
-//     return new Expanded(
-//       child: new Material(
-//         color: _pressed ? widget.pressedColor : widget.defaultColor,
-//         child: new InkWell(
-//           onTap: () {
-//             widget.tap();
-//             this.setState(() {
-//               _pressed = true;
-//             });
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }

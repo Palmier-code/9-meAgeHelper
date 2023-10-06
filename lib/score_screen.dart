@@ -31,9 +31,11 @@ class _ScoreScrennState extends State<ScoreScren> {
               Expanded(
                 child: TextField(
                   controller: army1,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration:  InputDecoration(
+                    border: const OutlineInputBorder(),
                     labelText: 'Vos points',
+                    labelStyle: TextStyle(color: Colors.grey[800]),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 2, color: Colors.grey[800]!)),
                   ),
                 ),
               ),
@@ -43,9 +45,11 @@ class _ScoreScrennState extends State<ScoreScren> {
               Expanded(
                 child: TextField(
                   controller: army2,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
                     labelText: 'Les points adverses',
+                    labelStyle: TextStyle(color: Colors.grey[800]),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 2, color: Colors.grey[800]!)),
                   ),
                 ),
               ),
@@ -208,12 +212,25 @@ class _ScoreScrennState extends State<ScoreScren> {
                   total = tmp;
                 });
               } else {
-                print("Do nothing"); // TODO mettre une popup
+                // print("Do nothing"); // TODO mettre une popup
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                  return AlertDialog(
+                    content: const Text("Veuillez renseignez les points de deux armées."),
+                    actions: [
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text("Compris chef!"),
+                      ),
+                    ],
+                  );
+                  },
+                );
               }
             },
           ),
           Text("$score1-$score2"),
-          // Text(total.toString()),
         ],
       ),
     );

@@ -72,6 +72,7 @@ class _BookScreenState extends State<BookScreen> {
                         context, version, "Regles", version == "francais" ? "Livre de Regles" : "RulesBook"),
                     buttonShowBook(
                         context, version, "Magie", version == "francais" ? "Recueil Arcanique" : "Arcane Compendium"),
+                    buttonShowBook(context, version, "Resume", version == "francais" ? "Résumés" : "Summaries"),
                     buttonShowBook(
                         context, version, "Saurien", version == "francais" ? "Ancien Saurien" : "Saurian Ancients"),
                     buttonShowBook(

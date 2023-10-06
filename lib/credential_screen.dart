@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class CredentialScreen extends StatefulWidget {
   const CredentialScreen({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 12,
           ),
           Text(
-            "Je suis fervent pour prendre toutes vos remarqueou correction concernant cette application",
+            "Je suis fervent pour prendre toutes vos remarque ou correction concernant cette application",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
@@ -55,12 +55,12 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 24,
           ),
           Text(
-            "App Version: BETA v1.0.1",
+            "App Version: BETA v1.0.4",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Changement pour cette version: -Ajout du général et de la grande banière pour le calcul du score",
+            "Changement pour cette version: -Ajout du général et de la grande banière pour le calcul du score\n-Revus de l'UI/UX de l'application\n-Affichage des erreurs sur la page points\n-Ajout du book résumée\n",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           )
@@ -95,19 +95,19 @@ class _CredentialScreenState extends State<CredentialScreen> {
     );
   }
 
-  Future<void> _lunchLinkedin() async {
-    if (!await launchUrl(
-      Uri.parse("www.linkedin.com/in/charlesaffouard"),
-    )) {
-      throw Exception('Could not launch Linekdin');
-    }
-  }
+  // Future<void> _lunchLinkedin() async {
+  //   if (!await launchUrl(
+  //     Uri.parse("www.linkedin.com/in/charlesaffouard"),
+  //   )) {
+  //     throw Exception('Could not launch Linekdin');
+  //   }
+  // }
 
-  Future<void> _lunchDiscord() async {
-    if (!await launchUrl(
-      Uri.parse("www.linkedin.com/in/charlesaffouard"),
-    )) {
-      throw Exception('Could not launch Linekdin');
-    }
-  }
+  // Future<void> _lunchDiscord() async {
+  //   if (!await launchUrl(
+  //     Uri.parse("www.linkedin.com/in/charlesaffouard"),
+  //   )) {
+  //     throw Exception('Could not launch Linekdin');
+  //   }
+  // }
 }
