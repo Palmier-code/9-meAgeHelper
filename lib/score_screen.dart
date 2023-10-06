@@ -32,6 +32,7 @@ class _ScoreScrennState extends State<ScoreScren> {
               Expanded(
                 child: TextField(
                   controller: army1,
+                  cursorColor: Colors.grey[800], 
                   decoration:  InputDecoration(
                     border: const OutlineInputBorder(),
                     labelText: 'Vos points',
@@ -46,6 +47,7 @@ class _ScoreScrennState extends State<ScoreScren> {
               Expanded(
                 child: TextField(
                   controller: army2,
+                  cursorColor: Colors.grey[800], 
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                     labelText: 'Les points adverses',
