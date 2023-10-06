@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palmhelp/Utils/pop_up.dart';
 
 class ScoreScren extends StatefulWidget {
   const ScoreScren({Key? key}) : super(key: key);
@@ -212,20 +213,9 @@ class _ScoreScrennState extends State<ScoreScren> {
                   total = tmp;
                 });
               } else {
-                // print("Do nothing"); // TODO mettre une popup
-                showDialog(
+                popUp(
                   context: context,
-                  builder: (BuildContext context) {
-                  return AlertDialog(
-                    content: const Text("Veuillez renseignez les points de deux armées."),
-                    actions: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text("Compris chef!"),
-                      ),
-                    ],
-                  );
-                  },
+                  string: "Veuillez renseignez les points de deux armées.",
                 );
               }
             },
