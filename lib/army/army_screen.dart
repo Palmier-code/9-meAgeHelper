@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:palmhelp/Utils/pop_up.dart';
 import 'package:palmhelp/army/display_army.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,7 +18,6 @@ class _ArmyScreenState extends State<ArmyScreen> {
   void initState() {
     super.initState();
     _loadArmy();
-    // removearmy();
   }
 
   @override
@@ -26,11 +26,30 @@ class _ArmyScreenState extends State<ArmyScreen> {
       body: Center(
         child: DisplayArmy(army: _army),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _addNewArmy,
-        tooltip: 'Ajouter une liste',
-        backgroundColor: Colors.grey[800],
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _addNewArmy,
+            tooltip: 'Ajouter une liste',
+            backgroundColor: Colors.grey[800],
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(
+            height: 6,
+          ),
+          FloatingActionButton(
+            onPressed: () => popUp(
+                context: context,
+                string:
+                    "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!\n\n\nLorsque vous cliquez sur un élément de votre liste le points se calcul automatiquement ;)",
+                title: "Besoin d'aide ?",
+                ),
+            tooltip: 'Comment ça marche ?',
+            backgroundColor: Colors.grey[800],
+            child: const Icon(Icons.help),
+          ),
+        ],
       ),
     );
   }

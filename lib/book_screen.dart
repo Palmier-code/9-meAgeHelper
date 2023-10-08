@@ -85,8 +85,6 @@ class _BookScreenState extends State<BookScreen> {
                         context, version, "Empire", version == "francais" ? "Empire de Sonnstahl" : "Empire of Sonnstahl"),
                     buttonShowBook(
                         context, version, "Nain", version == "francais" ? "Forteresse Naines" : "Dwarven Holds"),
-                    buttonShowBook(context, version, "Guerrier",version == "francais" ? 
-                        "Guerrier des dieux sombres" : "Warriors of the Dark Gods"),
                     buttonShowBook(
                         context, version, "Bete", version == "francais" ? "Hardes bestiales" : "Beast Herds"),
                     buttonShowBook(
@@ -101,6 +99,8 @@ class _BookScreenState extends State<BookScreen> {
                     buttonShowBook(context, version, "Ork", version == "francais" ? "Orques et goblins" : "Orcs and Gobelins"),
                     buttonShowBook(
                         context, version, "Bretonnie", version == "francais" ? "Royaume d'Equitaine": "Kingdom of Equitaine"),
+                    buttonShowBook(context, version, "Guerrier",version == "francais" ? 
+                        "Guerrier des dieux sombres" : "Warriors of the Dark Gods"),
                   ],
                 ),
               ],
