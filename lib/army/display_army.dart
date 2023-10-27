@@ -16,7 +16,7 @@ class _DisplayArmyState extends State<DisplayArmy> {
   @override
   void initState() {
     super.initState();
-    widgetListCheck = ValueNotifier(List.generate(20, (index) => false));
+    widgetListCheck = ValueNotifier(List.generate(22, (index) => false));
   }
 
   @override
