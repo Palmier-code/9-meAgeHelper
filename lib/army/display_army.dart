@@ -23,6 +23,8 @@ class _DisplayArmyState extends State<DisplayArmy> {
   Widget build(BuildContext context) {
     List<String> armySplit = widget.army.split('\n');
     return ListView.builder(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
       padding: const EdgeInsets.all(8),
       itemCount: armySplit.length,
       itemBuilder: (BuildContext context, int index) {
@@ -37,7 +39,6 @@ class _DisplayArmyState extends State<DisplayArmy> {
   }
 
   Widget armyContainer(String unity, int index, int max, bool widgetCheck) {
-
     if (index == 0) {
       return Center(
         child: Text(

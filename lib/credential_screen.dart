@@ -55,12 +55,12 @@ class _CredentialScreenState extends State<CredentialScreen> {
             height: 24,
           ),
           Text(
-            "App Version: BETA v1.0.8",
+            "App Version: BETA v1.1.0",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
           Text(
-            "Changement pour cette version:\n-Ajout du général et de la grande banière pour le calcul du score\n-Revus de l'UI/UX de l'application\n-Affichage des erreurs sur la page points\n-Ajout du book résumée\n-Reformation des WoDG pour la page des choix de book\n-Mise en place de la page aide\n-Revus de la popup",
+            "Changement pour cette version:\n-Ajout du général et de la grande banière pour le calcul du score\n-Revus de l'UI/UX de l'application\n-Affichage des erreurs sur la page points\n-Ajout du book résumée\n-Reformation des WoDG pour la page des choix de book\n-Mise en place de la page aide\n-Revus de la popup\n-Ajout de plusieurs emplacements pour les armées",
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           )

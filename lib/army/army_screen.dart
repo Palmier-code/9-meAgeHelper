@@ -13,6 +13,7 @@ class ArmyScreen extends StatefulWidget {
 
 class _ArmyScreenState extends State<ArmyScreen> {
   String _army = "Pas d'armée";
+  int _nbOfArmy = 1;
 
   @override
   void initState() {
@@ -23,8 +24,78 @@ class _ArmyScreenState extends State<ArmyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: DisplayArmy(army: _army),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = 1;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[800],
+                  ),
+                  child: const Text("1"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = 2;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[800],
+                  ),
+                  child: const Text("2"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = 3;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[800],
+                  ),
+                  child: const Text("3"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = 4;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[800],
+                  ),
+                  child: const Text("4"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = 5;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[800],
+                  ),
+                  child: const Text("5"),
+                ),
+              ],
+            ),
+          ),
+          Expanded(child: DisplayArmy(army: _army)),
+        ],
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -40,11 +111,11 @@ class _ArmyScreenState extends State<ArmyScreen> {
           ),
           FloatingActionButton(
             onPressed: () => popUp(
-                context: context,
-                string:
-                    "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!\n\n\nLorsque vous cliquez sur un élément de votre liste le points se calcul automatiquement ;)",
-                title: "Besoin d'aide ?",
-                ),
+              context: context,
+              string:
+                  "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!\n\n\nLorsque vous cliquez sur un élément de votre liste les points se calcul automatiquement ;)",
+              title: "Besoin d'aide ?",
+            ),
             tooltip: 'Comment ça marche ?',
             backgroundColor: Colors.grey[800],
             child: const Icon(Icons.help),
@@ -54,10 +125,22 @@ class _ArmyScreenState extends State<ArmyScreen> {
     );
   }
 
+    void _addNewArmy() async {
+    final prefs = await SharedPreferences.getInstance();
+    final ClipboardData? cdata = await Clipboard.getData(Clipboard.kTextPlain);
+    String copiedtext = cdata!.text ?? "No army";
+    setState(() {
+      int tmp = _nbOfArmy;
+      _army = (copiedtext);
+      prefs.setString('army$tmp', _army);
+    });
+  }
+
   void _loadArmy() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _army = (prefs.getString('army') ?? "Pas d'armée");
+      int tmp = _nbOfArmy;
+      _army = (prefs.getString('army$tmp') ?? "Pas d'armée");
     });
   }
 
@@ -66,16 +149,6 @@ class _ArmyScreenState extends State<ArmyScreen> {
     prefs.remove('army');
     setState(() {
       _army = "Pas d'armée remove";
-    });
-  }
-
-  void _addNewArmy() async {
-    final prefs = await SharedPreferences.getInstance();
-    final ClipboardData? cdata = await Clipboard.getData(Clipboard.kTextPlain);
-    String copiedtext = cdata!.text ?? "No army";
-    setState(() {
-      _army = (copiedtext);
-      prefs.setString('army', _army);
     });
   }
 
