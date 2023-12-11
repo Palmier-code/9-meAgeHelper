@@ -66,22 +66,22 @@ class _CredentialScreenState extends State<CredentialScreen> {
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),
-          // const SizedBox(
-          //   height: 12,
-          // ),
-          // InkWell(
-          //   onTap: () => _lunchDiscord(),
-          //   child: Row(
-          //     children: const [
-          //       Text(
-          //         "Discord",
-          //         style: TextStyle(fontSize: 18),
-          //       ),
-          //       SizedBox(width: 2),
-          //       Icon(Icons.discord),
-          //     ],
-          //   ),
-          // ),
+          const SizedBox(
+            height: 12,
+          ),
+          InkWell(
+            onTap: () => _lunchDiscord(),
+            child: Row(
+              children: const [
+                Text(
+                  "Discord",
+                  style: TextStyle(fontSize: 18),
+                ),
+                SizedBox(width: 2),
+                Icon(Icons.discord),
+              ],
+            ),
+          ),
           const SizedBox(
             height: 12,
           ),
@@ -113,11 +113,11 @@ class _CredentialScreenState extends State<CredentialScreen> {
     }
   }
 
-  // Future<void> _lunchDiscord() async {
-  //   if (!await launchUrl(
-  //     Uri.parse("www.linkedin.com/in/charlesaffouard"),
-  //   )) {
-  //     throw Exception('Could not launch Linekdin');
-  //   }
-  // }
+  Future<void> _lunchDiscord() async {
+    if (!await launchUrl(
+      Uri.parse("www.linkedin.com/in/charlesaffouard"),
+    )) {
+      throw Exception('Could not launch Linekdin');
+    }
+  }
 }
