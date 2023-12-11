@@ -1,16 +1,31 @@
-# palmhelp
+# PalmHelp
 
-A new Flutter project.
+Bienvenue dans l'application des règles du jeu "9th Age". Cette application Flutter fournit un moyen interactif d'accéder aux règles du jeu de manière rapide et facile.
 
-## Getting Started
+## Pour commencer
 
-This project is a starting point for a Flutter application.
+Entrez ici les instructions pour bien débuter avec votre projet...
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Assurez-vous d'avoir [Flutter](https://flutter.dev/docs/get-started/install) installé sur votre machine. Clonez ensuite ce dépôt et exécutez la commande suivante :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+```
+
+### Démarrage
+
+```bash
+flutter run
+```
+
+## Fabriqué avec
+
+* [Flutter](https://flutter.dev/) - mobile Application
+
+
+## Auteurs
+
+* **[@Palmier](https://github.com/Palmier-code)**
+
