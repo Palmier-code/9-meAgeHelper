@@ -31,66 +31,11 @@ class _ArmyScreenState extends State<ArmyScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = 1;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[800],
-                  ),
-                  child: const Text("1"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = 2;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[800],
-                  ),
-                  child: const Text("2"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = 3;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[800],
-                  ),
-                  child: const Text("3"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = 4;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[800],
-                  ),
-                  child: const Text("4"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = 5;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey[800],
-                  ),
-                  child: const Text("5"),
-                ),
+                selectionButtonList(1),
+                selectionButtonList(2),
+                selectionButtonList(3),
+                selectionButtonList(4),
+                selectionButtonList(5),
               ],
             ),
           ),
@@ -144,7 +89,7 @@ class _ArmyScreenState extends State<ArmyScreen> {
     });
   }
 
-  void removearmy() async {
+  void _removeArmy() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.remove('army');
     setState(() {
@@ -160,5 +105,20 @@ class _ArmyScreenState extends State<ArmyScreen> {
       _army = (copiedtext);
       prefs.setString('army', _army);
     });
+  }
+
+  Widget selectionButtonList(int number) {
+    return ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _nbOfArmy = number;
+                      _loadArmy();
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: _nbOfArmy == number ? Colors.grey[800] : Colors.grey,
+                  ),
+                  child: Text("$number"),
+                );
   }
 }
