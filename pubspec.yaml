@@ -11,7 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # icon
   cupertino_icons: ^1.0.2
+  font_awesome_flutter: ^10.6.0
 
   # path PDF
   path_provider: ^2.0.13
