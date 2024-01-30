@@ -60,7 +60,7 @@ class _CredentialScreenState extends State<CredentialScreen> {
                   height: 24,
                 ),
                 const Text(
-                  "App Version: BETA v1.1.5",
+                  "App Version: BETA v1.1.6",
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),
@@ -87,7 +87,7 @@ class _CredentialScreenState extends State<CredentialScreen> {
                     children: [
                       Icon(
                         FontAwesomeIcons.discord,
-                        size: 30,
+                        size: 20,
                       ),
                       SizedBox(
                         width: 12,
@@ -109,7 +109,10 @@ class _CredentialScreenState extends State<CredentialScreen> {
                     children: [
                       Icon(
                         FontAwesomeIcons.linkedin,
-                        size: 30,
+                        size: 20,
+                      ),
+                      SizedBox(
+                        width: 12,
                       ),
                       Text(
                         "Mon Linkedin",
