@@ -60,7 +60,7 @@ class _CredentialScreenState extends State<CredentialScreen> {
                   height: 24,
                 ),
                 const Text(
-                  "App Version: BETA v1.1.6",
+                  "App Version: BETA v1.1.7",
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),

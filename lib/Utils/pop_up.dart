@@ -14,8 +14,8 @@ Future<void> popUp(
           actions: [
             TextButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.grey[800],
-                onPrimary: Colors.white,
+                backgroundColor: Colors.grey[800],
+                foregroundColor: Colors.white,
               ),
               onPressed: () {
                 Navigator.of(context).pop();

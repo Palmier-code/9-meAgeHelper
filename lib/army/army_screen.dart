@@ -116,7 +116,7 @@ class _ArmyScreenState extends State<ArmyScreen> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: _nbOfArmy == number ? Colors.grey[800] : Colors.grey,
+                    backgroundColor: _nbOfArmy == number ? Colors.grey[800] : Colors.grey,
                   ),
                   child: Text("$number"),
                 );

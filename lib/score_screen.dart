@@ -137,7 +137,7 @@ class _ScoreScrennState extends State<ScoreScren> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.grey[800],
+              backgroundColor: Colors.grey[800],
             ),
             child: const Text(
               "Calculer le score",
