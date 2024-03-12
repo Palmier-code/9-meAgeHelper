@@ -60,10 +60,18 @@ class _ArmyScreenState extends State<ArmyScreen> {
               builder: (context) => AlertDialog(
                 title: const Text("Besoin d'aide ?"),
                 content: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text(
                         "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!"),
-                    const Text("Pour le calcul de point vous pouvez cliquer sur 3 icons:"),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
+                        "Pour le calcul de point vous pouvez cliquer sur 3 icons qui correspondent à:"),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Row(
                       children: [
                         Icon(PhosphorIcons.skull()),
@@ -78,7 +86,9 @@ class _ArmyScreenState extends State<ArmyScreen> {
                     ),
                     const Row(
                       children: [
-                        Icon(PhosphorIconsFill.skull,),
+                        Icon(
+                          PhosphorIconsFill.skull,
+                        ),
                         Text("La totalité"),
                       ],
                     ),
