@@ -27,6 +27,7 @@ class _ScoreScrennState extends State<ScoreScren> {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
+          // Text("Merci de mettre les point pris à l'adversaire"),
           Row(
             children: [
               Expanded(

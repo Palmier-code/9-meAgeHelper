@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:palmhelp/Utils/pop_up.dart';
 import 'package:palmhelp/army/display_army.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ArmyScreen extends StatefulWidget {
@@ -55,11 +55,36 @@ class _ArmyScreenState extends State<ArmyScreen> {
             height: 6,
           ),
           FloatingActionButton(
-            onPressed: () => popUp(
+            onPressed: () => showDialog(
               context: context,
-              string:
-                  "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!\n\n\nLorsque vous cliquez sur un élément de votre liste les points se calcul automatiquement ;)",
-              title: "Besoin d'aide ?",
+              builder: (context) => AlertDialog(
+                title: const Text("Besoin d'aide ?"),
+                content: Column(
+                  children: [
+                    const Text(
+                        "1. Vous devez faire votre liste sur New Recruit\n2. Vous devez export votre liste sous format text\n3. Copier ce texte\n4. Cliquez sur le bouton + et ça marche!!"),
+                    const Text("Pour le calcul de point vous pouvez cliquer sur 3 icons:"),
+                    Row(
+                      children: [
+                        Icon(PhosphorIcons.skull()),
+                        const Text("Aucun points"),
+                      ],
+                    ),
+                    const Row(
+                      children: [
+                        Icon(PhosphorIconsBold.skull),
+                        Text("La moitié des points"),
+                      ],
+                    ),
+                    const Row(
+                      children: [
+                        Icon(PhosphorIconsFill.skull,),
+                        Text("La totalité"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
             tooltip: 'Comment ça marche ?',
             backgroundColor: Colors.grey[800],
@@ -70,7 +95,7 @@ class _ArmyScreenState extends State<ArmyScreen> {
     );
   }
 
-    void _addNewArmy() async {
+  void _addNewArmy() async {
     final prefs = await SharedPreferences.getInstance();
     final ClipboardData? cdata = await Clipboard.getData(Clipboard.kTextPlain);
     String copiedtext = cdata!.text ?? "No army";
@@ -109,16 +134,16 @@ class _ArmyScreenState extends State<ArmyScreen> {
 
   Widget selectionButtonList(int number) {
     return ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _nbOfArmy = number;
-                      _loadArmy();
-                    });
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: _nbOfArmy == number ? Colors.grey[800] : Colors.grey,
-                  ),
-                  child: Text("$number"),
-                );
+      onPressed: () {
+        setState(() {
+          _nbOfArmy = number;
+          _loadArmy();
+        });
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: _nbOfArmy == number ? Colors.grey[800] : Colors.grey,
+      ),
+      child: Text("$number"),
+    );
   }
 }
