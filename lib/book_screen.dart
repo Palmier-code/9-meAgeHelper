@@ -101,6 +101,8 @@ class _BookScreenState extends State<BookScreen> {
                         context, version, "Bretonnie", version == "francais" ? "Royaume d'Equitaine": "Kingdom of Equitaine"),
                     buttonShowBook(context, version, "Guerrier",version == "francais" ? 
                         "Guerrier des dieux sombres" : "Warriors of the Dark Gods"),
+                    buttonShowBook(context, version, "Geant",version == "francais" ? 
+                        "Géant" : "Giant"),
                   ],
                 ),
               ],
