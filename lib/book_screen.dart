@@ -74,33 +74,33 @@ class _BookScreenState extends State<BookScreen> {
                         context, version, "Magie", version == "francais" ? "Recueil Arcanique" : "Arcane Compendium"),
                     buttonShowBook(context, version, "Resume", version == "francais" ? "Résumés" : "Summaries"),
                     buttonShowBook(
-                        context, version, "Saurien", version == "francais" ? "Ancien Saurien" : "Saurian Ancients"),
+                        context, version, "Saurien", version == "francais" ? "Anciens Sauriens" : "Saurian Ancients"),
                     buttonShowBook(
-                        context, version, "Vampire", version == "francais" ? "Conclave Vampirique" : "Vampire Covenant"),
-                    buttonShowBook(context, version, "ElfeNoire", version == "francais" ? "Elfes Noires" : "Dread Elves"),
+                        context, version, "Vampire", version == "francais" ? "Conclaves Vampiriques" : "Vampire Covenant"),
+                    buttonShowBook(context, version, "ElfeNoire", version == "francais" ? "Elfes Noirs" : "Dread Elves"),
                     buttonShowBook(
-                        context, version, "ElfeSylvain", version == "francais" ? "Elfe Sylvain" : "Sylvan Elves"),
-                    buttonShowBook(context, version, "ElfeHaut", version == "francais" ? "Haut Elfe" : "Highborn Elves"),
+                        context, version, "ElfeSylvain", version == "francais" ? "Elfes Sylvains" : "Sylvan Elves"),
+                    buttonShowBook(context, version, "ElfeHaut", version == "francais" ? "Hauts Elfes" : "Highborn Elves"),
                     buttonShowBook(
                         context, version, "Empire", version == "francais" ? "Empire de Sonnstahl" : "Empire of Sonnstahl"),
                     buttonShowBook(
-                        context, version, "Nain", version == "francais" ? "Forteresse Naines" : "Dwarven Holds"),
+                        context, version, "Nain", version == "francais" ? "Forteresses Naines" : "Dwarven Holds"),
                     buttonShowBook(
                         context, version, "Bete", version == "francais" ? "Hardes bestiales" : "Beast Herds"),
                     buttonShowBook(
-                        context, version, "Sphynx", version == "francais" ? "Dynastie immortels" : "Undying Dynasties"),
-                    buttonShowBook(context, version, "Ogres", version == "francais" ? "Khan ogre" : "Ogre Khans"),
+                        context, version, "Sphynx", version == "francais" ? "Dynasties immortels" : "Undying Dynasties"),
+                    buttonShowBook(context, version, "Ogres", version == "francais" ? "Khans ogres" : "Ogre Khans"),
                     buttonShowBook(
-                        context, version, "Demon", version == "francais" ? "Légion Démoniaque" : "Deamon Legions"),
+                        context, version, "Demon", version == "francais" ? "Légions Démoniaques" : "Deamon Legions"),
                     buttonShowBook(
                         context, version, "Vermine", version == "francais" ? "Marée de vermines" : "Vermin Swarm"),
                     buttonShowBook(
-                        context, version, "NainDuc", version == "francais" ? "Nain infernal" : "Infernal Dwarves"),
+                        context, version, "NainDuc", version == "francais" ? "Nains infernaux" : "Infernal Dwarves"),
                     buttonShowBook(context, version, "Ork", version == "francais" ? "Orques et goblins" : "Orcs and Gobelins"),
                     buttonShowBook(
                         context, version, "Bretonnie", version == "francais" ? "Royaume d'Equitaine": "Kingdom of Equitaine"),
                     buttonShowBook(context, version, "Guerrier",version == "francais" ? 
-                        "Guerrier des dieux sombres" : "Warriors of the Dark Gods"),
+                        "Guerriers des dieux sombres" : "Warriors of the Dark Gods"),
                     buttonShowBook(context, version, "Geant",version == "francais" ? 
                         "Géant" : "Giant"),
                   ],

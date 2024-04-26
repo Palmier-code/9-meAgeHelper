@@ -28,7 +28,7 @@ class _CredentialScreenState extends State<CredentialScreen> {
                   height: 12,
                 ),
                 const Text(
-                  "Elle à été developper par Charles Affouard connu sous le pseudo Durgrim",
+                  "Elle a été developpée par Charles Affouard connu sous le pseudo Durgrim",
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),
